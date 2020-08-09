@@ -1,6 +1,6 @@
 form(action="/search", method='post')
-    label(for="title") Search by Title/Author/Genre/Year:
-    input(type="text", name="searchValue", value=searchValue)
+    label(for="search") Search by Title/Author/Genre/Year:
+    input(type="text", id='search', name="searchValue", value=searchValue)
     input(type="submit" value='Search', style='margin-left: 10px')
-    a.button(href='/', style='margin-left: 10px') Reset
+    a.button(href='/books', style='margin-left: 10px') Reset
         

@@ -9,6 +9,6 @@ block content
         include form_details
         input(type="submit", value='Update Book') 
         p
-            a.button(href='/') Cancel
+            a.button(href='/books') Cancel
     form(action=`/books/${book.id}/delete`, method="post")
         input(type="submit", value='Delete Book') 

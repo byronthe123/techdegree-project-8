@@ -40,7 +40,7 @@ const getBookArrays = (books) => {
 
 /* GET /index */
 router.get('/', (req, res) => {
-    return res.redirect('/books');
+    return res.render('index');
 });
 
 /* GET all books */
@@ -79,7 +79,7 @@ router.post('/books/new', asyncHandler(async (req, res) => {
 router.get("/books/:id", asyncHandler(async (req, res, next) => {
     const book = await Book.findByPk(req.params.id);
     if(book) {
-        res.render("edit", { book, title: book.title });  
+        res.render("update_book", { book, title: book.title });  
     } else {
         res.render('error');
     }
