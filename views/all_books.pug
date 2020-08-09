@@ -1,0 +1,27 @@
+extends layout
+
+block content
+    h1 All Books
+    p
+        a.button(href='/books/new') Create New Book
+    p
+        include search
+    table
+        thead
+            tr
+                th Title
+                th Author
+                th Genre
+                th Year
+        each array, index in bookArrays
+            tbody(id=`pagination-display-${index+1}`, class=`pagination ${index !== 0 ? 'hidden' : ''}`) 
+                each book in array
+                    tr  
+                        td
+                            a(href=`/books/${book.id}`) #{book.title}
+                        td=book.author
+                        td=book.genre
+                        td=book.year
+    .pagination-buttons
+        each array, index in bookArrays
+            a.button(class=`pagination-button ${index === 0 ? 'active' : ''}`, id=`${index+1}`, style='margin-top: 25px; margin-right: 5px;') #{index+1}

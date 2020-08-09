@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    h2= title
+  
+    include errors
+  
+    form(action=`/books/${book.id}`, method="post")
+        include form_details
+        input(type="submit", value='Update Book') 
+        p
+            a.button(href='/') Cancel
+    form(action=`/books/${book.id}/delete`, method="post")
+        input(type="submit", value='Delete Book') 
